@@ -1,4 +1,5 @@
 local game={}
+shove.createLayer("game")
 
 function game:enter()
     currentGame="test"
@@ -22,5 +23,11 @@ function game:update(dt)
 end
 
 function game:draw()
-    env.draw()
+    shove.beginDraw()
+        shove.beginLayer("game")
+            env.draw()
+        shove.endLayer()
+    shove.endDraw()
 end
+
+return game

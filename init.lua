@@ -11,7 +11,7 @@ config=require 'config'
 lg.setDefaultFilter(config.filterMin,config.filterMax)
 
 shove=require 'lib.shove'
-shove.setResolution(96,64,{fitMethod="aspect",renderMode="layer"})
+shove.setResolution(96,64,{fitMethod="aspect",renderMode="layer",scalingFilter="nearest"})
 shove.setWindowMode(800, 600, {resizable = true})
 
 baton=require 'lib/baton'

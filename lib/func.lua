@@ -14,22 +14,16 @@ function centerOutlineText(text,x,y)
     outlineText(text,x-(w/2)-camera.x,y-(font:getHeight()/2)-camera.y,1,2)
 end
 
-function lg.cPrint(text,x,y)
-    local w=font:getWidth(text)
-    --y-(font:getHeight()/2)
-    lg.print(text,x-(w/2),y)
-end
-
-function setColor(hex)
-    lg.setColor(color(hex))
-end
-
-function resetColor()
-    lg.setColor(1,1,1,1)
-end
-
 function clamp(x, min, max)
     return math.max(min, math.min(x, max))
+end
+
+function color(hex, value)
+	return {tonumber(string.sub(hex, 2, 3), 16)/256, tonumber(string.sub(hex, 4, 5), 16)/256, tonumber(string.sub(hex, 6, 7), 16)/256, value or 1}
+end
+
+function col(x1,y1,x2,y2,w1,h1,w2,h2)
+    return x1<x2+w2 and x2<x1+w1 and y1<y2+h2 and y2<y1+h1 
 end
 
 function lerpDt(a, b, t,dt)
@@ -39,23 +33,3 @@ end
 function lerp(a, b, t,dt)
     return a + (b - a) * t
 end
-
-function collision(x1,y1,x2,y2,w1,h1,w2,h2)
-    return x1<x2+w2 and x2<x1+w1 and y1<y2+h2 and y2<y1+h1 
-end
-
-rr=love.graphics.rectangle
-
-function rect(f,x,y,w,h)
-    if f=="fill" then
-        rr(f,x,y,w,h)
-    else
-        rr(f,x+.5,y+.5,w,h)
-    end
-end
-
-function pointCol(pX, pY, bx, by, bw, bh)
-    return pX >= bx and pX < bx + bw and pY >= by and pY < by + bh
-end
-
-lg.rectangle=rect
