@@ -14,8 +14,8 @@ function love.load()
     gs.switch(require("rungame"))
 end
 
-function love.update()
-
+function love.update(dt)
+    input:update(dt)
 end
 
 function love.draw()
