@@ -2,7 +2,7 @@ function init()
 
 end
 
-function update()
+function update(dt)
 
 end
 

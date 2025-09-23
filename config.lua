@@ -16,7 +16,12 @@ return {
     --input
     input={
         controls={
-
+            up={"key:up"},
+            down={"key:down"},
+            left={"key:left"},
+            right={"key:right"},
+            a={"key:z"},
+            b={"key:x"}
         },
         pairs={
 
