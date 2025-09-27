@@ -14,6 +14,6 @@ shove=require 'lib.shove'
 shove.setResolution(96,64,{fitMethod="aspect",renderMode="layer",scalingFilter="nearest"})
 shove.setWindowMode(800, 600, {resizable = true})
 
-baton=require 'lib/baton'
+baton=require 'lib.baton'
 
 input=baton.new(config.input)

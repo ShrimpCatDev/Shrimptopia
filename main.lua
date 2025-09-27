@@ -1,6 +1,7 @@
 require("init")
 
 function love.load()
+    https=require("https")
 
     font=lg.newFont("assets/font.ttf",4)
     lg.setFont(font)
